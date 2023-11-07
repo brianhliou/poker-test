@@ -1,0 +1,31 @@
+[
+    {
+        "description": "Test Case 1: Royal Flush vs Straight Flush. The Royal Flush (first hand) is expected to win.",
+        "hands": [
+            ["AS", "KS", "QS", "JS", "10S", "3H", "2D"],
+            ["KD", "QD", "JD", "10D", "9D", "3S", "2H"]
+        ],
+        "expected_winner": [["AS", "KS", "QS", "JS", "10S", "3H", "2D"]]
+    },
+    {
+        "description": "Test Case 2: Full House vs Full House. The Full House with three 9s and two 7s (first hand) is expected to win against the Full House with three 8s and two Kings (second hand).",
+        "hands": [
+            ["9S", "9D", "9C", "7S", "7H", "2D", "5C"], 
+            ["8S", "8D", "8C", "KS", "KH", "3D", "6C"]
+        ],
+        "expected_winner": [
+            ["9S", "9D", "9C", "7S", "7H", "2D", "5C"]
+        ]
+    },
+    {
+        "description": "Test Case 3: Flush with Same High Card. Both hands have a Flush with an Ace high. The second hand has a Queen as the second highest card, making it the winner over the first hand with a Jack.",
+        "hands": [
+            ["AC", "JC", "9C", "7C", "3C", "2D", "5H"],
+            ["AC", "QC", "10C", "6C", "4C", "3D", "2H"]
+        ],
+        "expected_winner": [
+            ["AC", "QC", "10C", "6C", "4C", "3D", "2H"]
+        ]
+    }
+    
+]
