@@ -132,7 +132,9 @@ def is_straight(hand):
     # Helper function to check for a straight
     def check_straight(cards):
         for i in range(len(cards) - 4):
-            if rank_index_high(cards[i]) == rank_index_high(cards[i + 4]) + 4:
+            # Check if the sequence is continuous
+            is_sequential = all(rank_index_high(cards[i + j]) == rank_index_high(cards[i]) - j for j in range(5))
+            if is_sequential:
                 return True, cards[i:i + 5]
         return False, []
 
